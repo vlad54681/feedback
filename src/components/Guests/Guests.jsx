@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import style from './Guests.module.scss'
-
+import tick from '../../assets/img/icons/tick.png'
 
 
 
@@ -13,10 +13,10 @@ const Guests = ({ guests, getCurrentGuest }) => {
 	guestNames = guests.map((guest, index) => <tr key={guest.name + index}>
 		{!!guest.feedback && !!guest.isVegan ?
 			<td className={style.guestName + ' ' + style.veganWithFeedback}>
-				<NavLink onClick={getCurrentGuest.bind(null, guest)} to="">{guest.name}</NavLink></td> :
+				<img src={tick} className={style.tick} alt="ooops" /><NavLink onClick={getCurrentGuest.bind(null, guest)} to="">{guest.name}</NavLink></td> :
 			!!guest.feedback ?
 				<td className={style.guestName + ' ' + style.guestWithFeedback}>
-					<NavLink onClick={getCurrentGuest.bind(null, guest)} to="">{guest.name}</NavLink></td> :
+					<img src={tick} className={style.tick} alt="ooops" /><NavLink onClick={getCurrentGuest.bind(null, guest)} to="">{guest.name}</NavLink></td> :
 
 
 				!!guest.eatsPizza && !!guest.isVegan ? <td className={style.guestName + ' ' + style.vegan}>

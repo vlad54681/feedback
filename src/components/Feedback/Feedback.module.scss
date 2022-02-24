@@ -1,0 +1,146 @@
+.backButton {
+	position: absolute;
+	right: 65px;
+
+	top: 35px;
+}
+.feedBack {
+	width: 700px;
+	height: 400px;
+	margin-top: 40px;
+	max-width: 800px;
+	word-break: break-word;
+	overflow: hidden;
+	caret-color: transparent;
+	&__rating {
+	}
+	&__phone {
+	}
+	&__comment {
+		width: 100%;
+		height: 180px;
+		overflow-y: auto;
+		font-size: 16px;
+		margin: 10px 0;
+		padding: 10px;
+		box-sizing: border-box;
+		border-radius: 10px;
+		background: rgb(255, 255, 255);
+	}
+}
+
+.starsRating {
+	caret-color: transparent;
+	position: relative;
+	font-size: 40px;
+	display: inline-block;
+	&::before {
+		content: "★★★★★";
+		display: block;
+	}
+	&__items {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row-reverse;
+		overflow: hidden;
+	}
+	&__item {
+		position: absolute;
+		width: 0%;
+		height: 0%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		&:checked,
+		&:checked ~ label {
+			color: rgb(210, 221, 53);
+		}
+	}
+	&__label {
+		flex: 0 0 20%;
+		height: 100%;
+		cursor: pointer;
+		color: #dcdcdc;
+		&::before {
+			content: "★";
+			display: block;
+			transition: color 0.3s ease 0s;
+		}
+		&:hover,
+		&:hover ~ label,
+		&:checked ~ label:hover {
+			color: rgb(230, 230, 125);
+		}
+	}
+}
+.rating {
+	&__container {
+		display: inline-flex;
+		caret-color: transparent;
+		flex-direction: row-reverse;
+	}
+	&[data-total-value="2"] .rating__item:nth-child(n + 4),
+	&[data-total-value="3"] .rating__item:nth-child(n + 3),
+	&[data-total-value="1"] .rating__item:nth-child(n + 5),
+	&[data-total-value="4"] .rating__item:nth-child(n + 2),
+	&[data-total-value="5"] .rating__item:nth-child(n + 1) {
+		color: rgb(210, 221, 53);
+	}
+	&__item {
+		color: #dcdcdc;
+		font-size: 40px;
+	}
+}
+.deleteButton {
+	position: absolute;
+	bottom: 0px;
+}
+.phoneInput {
+	display: flex;
+	gap: 10px;
+	& input {
+		border: none;
+		padding: 3px 10px;
+		border-radius: 6px;
+		caret-color: auto;
+	}
+}
+.comment {
+	resize: none;
+	width: 100%;
+	height: 180px;
+	overflow-y: auto;
+	font-size: 16px;
+	margin: 10px 0;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background: rgb(255, 255, 255);
+	border: none;
+	caret-color: auto;
+}
+.button {
+	position: absolute;
+	bottom: 0px;
+}
+
+.guestPhone {
+	position: relative;
+}
+.error {
+	max-width: 300px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	color: red;
+	display: block;
+	line-height: 45px;
+	right: -320px;
+	font-size: 16px;
+	line-height: 20px;
+}

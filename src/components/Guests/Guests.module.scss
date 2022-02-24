@@ -1,0 +1,34 @@
+.guests {
+	caret-color: transparent;
+}
+.veganWithFeedback {
+	position: relative;
+	color: green;
+	&:before {
+		content: "";
+		width: 30px;
+		height: 30px;
+		display: block;
+		position: absolute;
+		left: -35px;
+		height: 40px;
+		background: url("../../assets/img/icons/tick.png") center / contain no-repeat;
+	}
+}
+.guestWithFeedback {
+	position: relative;
+
+	&:before {
+		content: "";
+		width: 30px;
+		height: 30px;
+		display: block;
+		position: absolute;
+		left: -35px;
+		height: 40px;
+		background: url("../../assets/img/icons/tick.png") center / contain no-repeat;
+	}
+}
+.vegan {
+	color: green;
+}
